@@ -1,0 +1,53 @@
+body{
+
+    margin:0;
+
+    background:#f3f5f7;
+
+    font-family:Arial;
+
+}
+
+.container{
+
+    width:95%;
+
+    max-width:500px;
+
+    margin:auto;
+
+    margin-top:30px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+    text-align:center;
+
+}
+
+button{
+
+    padding:15px 30px;
+
+    background:#2e7d32;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+}
+
+#reader{
+
+    width:100%;
+
+}

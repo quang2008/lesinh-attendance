@@ -5,7 +5,7 @@ const scanBtn = document.getElementById("scanBtn");
 const result = document.getElementById("result");
 const reader = document.getElementById("reader");
 
-const API_URL = "https://script.google.com/macros/s/AKfycbz0lAZin7K_MAOBy2lJ6Q_fWr1eTlUr5hoyVLRPk7_MV1yJcvNHEfnTL6EwHfPHTU_1wA/exec"; // <-- Thay bằng URL Apps Script
+const API_URL = "https://script.google.com/macros/s/AKfycbw-JzNfg7kj09T9EgiYwGcSCd1nUnAXUI3DTOFsLJlngMTdd6-If59rVYi8nUUZmqlqyQ/exec"; // <-- Thay bằng URL Apps Script
 
 scanBtn.addEventListener("click", startScan);
 
@@ -67,7 +67,7 @@ async function onScanSuccess(decodedText) {
 
     try {
 
-        const response = await fetch(API_URL, {
+        const response = await fetch(API_URL, {     method: "POST",     headers: {         "Content-Type": "application/json"     },     body: JSON.stringify({         id: decodedText     }) });  console.log("HTTP Status:", response.status);  const text = await response.text();  console.log("Response:", text);  const data = JSON.parse(text);
 
             method: "POST",
 

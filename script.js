@@ -16,11 +16,30 @@ document.getElementById("scanBtn").addEventListener("click", async () => {
             },
             (decodedText) => {
 
-                document.getElementById("result").innerHTML =
-                    "✅ Đã quét: <b>" + decodedText + "</b>";
+               document.getElementById("result").innerHTML =
+    "⏳ Đang điểm danh...";
 
-                scanner.stop();
+fetch("https://script.google.com/macros/s/AKfycbwTy6P7af2-RJY3XrmyQEDFi6ZE_laX8Gz_V-sIXj0D57TKv26V-C4E8eIzKXG5m4Kw3A/exec", {
+    method: "POST",
+    body: JSON.stringify({
+        id: decodedText
+    })
+})
+.then(res => res.json())
+.then(data => {
 
+    document.getElementById("result").innerHTML =
+        "✅ Điểm danh thành công<br><b>" + decodedText + "</b>";
+
+    scanner.stop();
+
+})
+.catch(err => {
+
+    document.getElementById("result").innerHTML =
+        "❌ " + err;
+
+});
             }
         );
 
